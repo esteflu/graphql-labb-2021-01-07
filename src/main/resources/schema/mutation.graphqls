@@ -1,5 +1,10 @@
 type Mutation {
-    addUser(name: String, email: String): User
+    addUser(name: String, email: String, address: AddressInput): User
     deleteUser(id: Int): Boolean
+}
+
+input AddressInput {
+    street : String
+    city : String
 }
 

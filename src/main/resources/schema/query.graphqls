@@ -1,9 +1,17 @@
 type Query {
     allUsers: [User]
+    userById(id: Int): User
 }
 
 type User {
     id: ID
     name: String
     email: String
+    address: Address
 }
+
+type Address {
+    street: String
+    city: String
+}
+

@@ -18,19 +18,7 @@ public class Query implements GraphQLQueryResolver {
 		return userService.getAllUsers();
 	}
 
-	/*public String firstQuery () {
-		return "First Query";
+	public User userById(int id) {
+		return userService.getUserById(id);
 	}
-
-	public String secondQuery () {
-		return "Second Query";
-	}
-
-	public String fullName (SampleRequest sampleRequest) {
-		return sampleRequest.getFirstName() + " " + sampleRequest.getLastName();
-	}
-
-	public StudentResponse getStudent (long id) {
-		return new StudentResponse(studentService.getStudentById(id));
-	}*/
 }

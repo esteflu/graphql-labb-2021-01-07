@@ -4,8 +4,14 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+import lombok.Getter;
+import lombok.Setter;
 
-@Entity // This tells Hibernate to make a table out of this class
+@Getter
+@Setter
+@Entity
 public class User {
   @Id
   @GeneratedValue(strategy= GenerationType.AUTO)
@@ -13,27 +19,7 @@ public class User {
   private String name;
   private String email;
 
-  public Integer getId() {
-    return id;
-  }
-
-  public void setId(Integer id) {
-    this.id = id;
-  }
-
-  public String getName() {
-    return name;
-  }
-
-  public void setName(String name) {
-    this.name = name;
-  }
-
-  public String getEmail() {
-    return email;
-  }
-
-  public void setEmail(String email) {
-    this.email = email;
-  }
+  @OneToOne
+  @JoinColumn(name = "address_id")
+  private Address address;
 }

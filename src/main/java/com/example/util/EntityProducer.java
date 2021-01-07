@@ -1,5 +1,6 @@
 package com.example.util;
 
+import com.example.entity.Address;
 import com.example.entity.User;
 
 public class EntityProducer {
